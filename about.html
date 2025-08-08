@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About – Code Explorers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Our mission: equitable access to high-quality STEM education through hands-on, standards-aligned programs." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Code Explorers</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1>Our Mission</h1>
+        <p>To empower students—especially first-time coders—with practical STEM skills through projects that feel like play and build real confidence.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>Our Approach</h2>
+        <ul>
+          <li><strong>Project-based</strong>: ship small, ship often.</li>
+          <li><strong>Standards-aligned</strong>: CSTA & AP CSP coherence.</li>
+          <li><strong>Accessible</strong>: scaffolded pathways, multiple entry points.</li>
+          <li><strong>Teacher-friendly</strong>: ready-to-run materials and PD.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Team</h2>
+        <article class="card">
+          <h3>Program Lead</h3>
+          <p>Bio placeholder. Add qualifications, certifications, and a brief story.</p>
+        </article>
+        <article class="card">
+          <h3>Advisors & Partners</h3>
+          <p>List advisors/partners. Include school partners and community orgs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Where do you run programs?</summary>
+          <p>On-site at partner schools, community centers, and summer camps.</p>
+        </details>
+        <details>
+          <summary>Do you offer teacher training?</summary>
+          <p>Yes—half-day PD, turnkey kits, and ongoing support.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Code Explorers</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('navToggle'), menu = document.getElementById('navMenu');
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); menu.hidden = open; });
+    menu.hidden = true;
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Get Involved – Code Explorers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Partner with us, volunteer, or donate to expand access to STEM." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Code Explorers</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html" aria-current="page">Get Involved</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1>Get Involved</h1>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="partner">
+      <div class="container">
+        <h2>Partner With Us</h2>
+        <p>Bring Code Explorers to your school or community org. We’ll tailor a proposal to your schedule, goals, and budget.</p>
+        <a href="contact.html#inquiry" class="btn btn-primary">Request a Proposal</a>
+      </div>
+    </section>
+
+    <section class="section" id="volunteer">
+      <div class="container">
+        <h2>Volunteer</h2>
+        <form aria-describedby="volunteer-help">
+          <label for="v-name">Full Name</label>
+          <input id="v-name" name="name" required />
+          <label for="v-email">Email</label>
+          <input id="v-email" name="email" type="email" required />
+          <label for="v-role">Interests</label>
+          <select id="v-role" name="role">
+            <option>Classroom Support</option>
+            <option>Mentor / Speaker</option>
+            <option>Logistics / Events</option>
+          </select>
+          <label for="v-notes">Notes</label>
+          <textarea id="v-notes" name="notes" rows="4" placeholder="Availability, skills, preferred campus..."></textarea>
+          <button type="submit">Submit</button>
+          <p id="volunteer-help" class="muted">We’ll reply within 2–3 business days.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="donate">
+      <div class="container">
+        <h2>Donate</h2>
+        <p>Your support funds scholarships, kits, and educator training.</p>
+        <p>
+          <!-- Replace with your live Stripe links -->
+          <a href="#" rel="nofollow" class="btn btn-primary">Give Monthly</a>
+          <a href="#" rel="nofollow" class="btn btn-ghost">One-Time Gift</a>
+        </p>
+        <p>Looking for corporate sponsorship? <a href="contact.html#inquiry">Contact us</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Code Explorers</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('navToggle'), menu = document.getElementById('navMenu');
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); menu.hidden = open; });
+    menu.hidden = true;
+  </script>
+</body>
+</html>

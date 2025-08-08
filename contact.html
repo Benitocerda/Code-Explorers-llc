@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact – Code Explorers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reach out for partnerships, questions, or media." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Code Explorers</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1>Contact</h1>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="inquiry">
+      <div class="container">
+        <h2>General Inquiry</h2>
+        <form action="/api/contact" method="post">
+          <label for="c-name">Full Name</label>
+          <input id="c-name" name="name" required />
+
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" required />
+
+          <label for="c-type">I’m a...</label>
+          <select id="c-type" name="type">
+            <option>School / Administrator</option>
+            <option>Teacher</option>
+            <option>Parent / Guardian</option>
+            <option>Student</option>
+            <option>Sponsor</option>
+            <option>Other</option>
+          </select>
+
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+        <p><strong>Email:</strong> codeexplorersllc@gmail.com</p>
+        <p><strong>Location:</strong> Chicago, IL</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Newsletter</h2>
+        <form action="/api/subscribe" method="post">
+          <label for="n-email">Email</label>
+          <input id="n-email" name="email" type="email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Code Explorers</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('navToggle'), menu = document.getElementById('navMenu');
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); menu.hidden = open; });
+    menu.hidden = true;
+  </script>
+</body>
+</html>

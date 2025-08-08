@@ -1,0 +1,223 @@
+/* === Code Explorers – Modern UX Base (Desktop-First) ===
+   Palette: Blue / Orange / White
+*/
+
+/* 1) Reset & Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, video { max-width: 100%; height: auto; display: block; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+:root {
+  /* === Colors === */
+  --brand-blue: #1f6feb;
+  --brand-blue-ink: #0f2659;
+  --brand-orange: #ff8a00;
+  --brand-orange-ink: #6b3b00;
+
+  --bg: #ffffff;
+  --bg-soft: #f7f9fc;
+  --card: #ffffff;
+  --text: #1b1f23;
+  --muted: #6a7684;
+  --border: #e6eaf0;
+
+  /* === Effects === */
+  --shadow-sm: 0 2px 10px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 10px 30px rgba(16, 24, 40, 0.08);
+  --ring: 0 0 0 3px rgba(31, 111, 235, 0.25);
+
+  /* === Sizing === */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --container: 1200px;
+
+  /* Typography */
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --h1: clamp(2rem, 1rem + 3vw, 3rem);
+  --h2: clamp(1.5rem, 0.8rem + 2vw, 2.25rem);
+  --h3: clamp(1.125rem, 0.8rem + 1vw, 1.5rem);
+  --body: 1rem;
+  --space: 24px;
+}
+
+html, body {
+  font-family: var(--font);
+  font-size: var(--body);
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 2) Utilities */
+.container {
+  width: min(100% - 32px, var(--container));
+  margin-inline: auto;
+}
+.section { padding: calc(var(--space) * 3) 0; }
+.section-soft { background: var(--bg-soft); }
+
+.grid { display: grid; gap: 24px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+
+.muted { color: var(--muted); }
+.center { text-align: center; }
+
+/* 3) Focus & Accessibility */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 8px;
+}
+.skip-link {
+  position: absolute;
+  left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed; left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px;
+  background: var(--brand-blue); color: #fff; border-radius: 8px; z-index: 10000;
+}
+
+/* 4) Header / Nav */
+header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+header nav {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 64px;
+}
+.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 0; font-weight: 800; letter-spacing: 0.2px;
+}
+.logo::before {
+  content: "";
+  width: 28px; height: 28px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-orange));
+  box-shadow: 0 6px 18px rgba(31,111,235,0.25);
+}
+#navMenu {
+  display: flex; align-items: center; gap: 18px;
+}
+#navMenu a {
+  padding: 10px 12px; border-radius: 10px;
+  color: var(--brand-blue-ink);
+}
+#navMenu a[aria-current="page"] {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+}
+#navToggle {
+  display: none; /* shown in mobile.css */
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 14px; border-radius: 10px;
+}
+
+/* 5) Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; padding: 12px 18px; border-radius: 999px;
+  border: 1px solid var(--border); background: #fff; box-shadow: var(--shadow-sm);
+  transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn:active { transform: translateY(0); }
+.btn-primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-orange));
+  color: #fff;
+}
+.btn-ghost {
+  background: transparent; border-color: var(--border);
+}
+.btn-cta {
+  background: var(--brand-orange); border-color: var(--brand-orange);
+  color: #fff; box-shadow: 0 8px 24px rgba(255,138,0,0.25);
+}
+
+/* 6) Hero */
+main > section:first-of-type {
+  padding: calc(var(--space) * 4) 0;
+  background: radial-gradient(90% 80% at 50% 0%, #eef3ff 0%, #ffffff 60%);
+}
+#hero-title {
+  font-size: var(--h1); line-height: 1.15; margin: 0 0 10px;
+}
+main p { margin: 8px 0 0 0; }
+
+/* 7) Impact list */
+#impact-title { font-size: var(--h2); margin: 0 0 12px; }
+#impact-title + ul {
+  display: flex; gap: 24px; flex-wrap: wrap; padding: 0; margin-top: 12px;
+}
+#impact-title + ul li {
+  padding: 14px 18px; border-radius: var(--radius-sm);
+  background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+}
+
+/* 8) Featured Tracks cards */
+#featured-title { font-size: var(--h2); margin: 0 0 20px; }
+#featured-title ~ article {
+  display: grid; grid-template-columns: 1fr; gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px; background: #fff; box-shadow: var(--shadow-sm);
+  transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+  margin-bottom: 16px;
+}
+#featured-title ~ article:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(31,111,235,0.25);
+}
+#featured-title ~ article h3 { font-size: var(--h3); margin: 0; }
+
+/* 9) Forms */
+form {
+  display: grid; gap: 14px; max-width: 720px;
+}
+label { font-weight: 600; }
+input, select, textarea {
+  width: 100%; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid var(--border); background: #fff;
+}
+textarea { resize: vertical; }
+button[type="submit"] {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; padding: 12px 18px; border-radius: 999px;
+  border: 1px solid transparent; background: linear-gradient(135deg, var(--brand-blue), var(--brand-orange));
+  color: #fff; box-shadow: var(--shadow-sm);
+}
+
+/* 10) Footer */
+footer {
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+footer > .container, header > nav {
+  padding: 12px 0;
+}
+footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* 11) Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

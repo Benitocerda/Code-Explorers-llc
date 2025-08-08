@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Code Explorers – STEM Programs for K–12</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hands-on STEM programs in coding, robotics, and digital creativity for K–12 learners." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Code Explorers</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section center">
+      <div class="container">
+        <h1 id="hero-title">Hands-On STEM That Sticks</h1>
+        <p>Project-based coding, robotics, and creative tech for K–12—built to spark curiosity and lasting skills.</p>
+        <p>
+          <a href="programs.html" class="btn btn-primary">Explore Programs</a>
+          <a href="get-involved.html" class="btn btn-ghost">Partner With Us</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2 id="impact-title">Our Impact</h2>
+        <ul>
+          <li><strong>1,200+</strong> students served</li>
+          <li><strong>60%</strong> first-gen coders</li>
+          <li><strong>15</strong> school partners</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 id="featured-title">Featured Tracks</h2>
+        <article>
+          <h3>Intro to Coding</h3>
+          <p>Block to text-based progression using age-appropriate tools.</p>
+          <a href="programs.html#coding">Learn more</a>
+        </article>
+        <article>
+          <h3>Robotics</h3>
+          <p>Build, wire, and code bots for real-world challenges.</p>
+          <a href="programs.html#robotics">Learn more</a>
+        </article>
+        <article>
+          <h3>Creative Tech</h3>
+          <p>Game design, digital art, and micro-projects that ship.</p>
+          <a href="programs.html#creative-tech">Learn more</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-soft center">
+      <div class="container">
+        <h2 id="cta-title">Bring Code Explorers to Your School</h2>
+        <p>We run in-school, after-school, and summer intensives. Flexible models, turnkey rollout.</p>
+        <a href="get-involved.html#partner" class="btn btn-cta">Start a Partnership</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Code Explorers • Chicago, IL</p>
+      <nav>
+        <a href="contact.html">Contact</a>
+        <a href="get-involved.html#donate">Donate</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+    btn.addEventListener('click', () => {
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      menu.hidden = exp;
+    });
+    menu.hidden = true;
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Programs – Code Explorers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Coding, Robotics, and Creative Tech programs with clear outcomes, durations, and age ranges." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Code Explorers</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html" aria-current="page">Programs</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1>Programs</h1>
+        <p class="muted">In-school, after-school, and summer options. We tailor pacing and tools by grade band.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="coding">
+      <div class="container">
+        <h2>Intro to Coding</h2>
+        <p><strong>Grades:</strong> 3–12 • <strong>Length:</strong> 8–10 weeks • <strong>Pathway:</strong> Blocks → Python/JS</p>
+        <ul>
+          <li>Concepts: sequencing, loops, conditionals, functions.</li>
+          <li>Outcomes: 3–5 shipped mini projects + final showcase.</li>
+          <li>Tools: age-appropriate (e.g., Scratch → Python/JS).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="robotics">
+      <div class="container">
+        <h2>Robotics</h2>
+        <p><strong>Grades:</strong> 4–12 • <strong>Length:</strong> 8–12 weeks • <strong>Pathway:</strong> Build → Wire → Code</p>
+        <ul>
+          <li>Sensors, motors, control flow, debugging.</li>
+          <li>Team challenges and demo day.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="creative-tech">
+      <div class="container">
+        <h2>Creative Tech</h2>
+        <p><strong>Grades:</strong> 5–12 • <strong>Length:</strong> 6–8 weeks • <strong>Focus:</strong> Games, art, micro-electronics</p>
+        <ul>
+          <li>Game jams, pixel art, simple electronics.</li>
+          <li>Portfolio-ready artifacts.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="delivery">
+      <div class="container">
+        <h2>Delivery Models</h2>
+        <ul>
+          <li><strong>After-School</strong> (1–2x/week, 60–90 min)</li>
+          <li><strong>In-School</strong> (push-in, stations, or full class)</li>
+          <li><strong>Summer Intensives</strong> (daily, 1–2 weeks)</li>
+          <li><strong>PD & Kits</strong> (turnkey for teachers)</li>
+        </ul>
+        <p><a href="get-involved.html#partner" class="btn btn-primary">Request a Proposal</a></p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="alignment">
+      <div class="container">
+        <h2>Standards Alignment</h2>
+        <p>Aligned to CSTA K–12 and supports AP CSP practices (abstraction, data, algorithms, programming, impacts of computing).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Code Explorers</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('navToggle'), menu = document.getElementById('navMenu');
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); menu.hidden = open; });
+    menu.hidden = true;
+  </script>
+</body>
+</html>

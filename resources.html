@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Resources – Code Explorers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Lesson guides, tools, and at-home activities for students, teachers, and families." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Code Explorers</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="resources.html" aria-current="page">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <h1>Resources</h1>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>For Students</h2>
+        <ul>
+          <li><a href="#" download>Starter Pack: Variables &amp; Loops (PDF)</a></li>
+          <li><a href="#">Browser-Based Coding Tools</a></li>
+          <li><a href="#">At-Home Mini Projects</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>For Teachers</h2>
+        <ul>
+          <li><a href="#" download>Lesson Plan: Intro to Conditionals (PDF)</a></li>
+          <li><a href="#" download>Rubrics &amp; Checklists (PDF)</a></li>
+          <li><a href="#">CSTA &amp; AP CSP Alignment Notes</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>For Families</h2>
+        <ul>
+          <li><a href="#" download>Parent Guide: Supporting STEM at Home (PDF)</a></li>
+          <li><a href="#">Recommended Low-Cost Kits</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>FAQs</h2>
+        <details>
+          <summary>Do students need their own devices?</summary>
+          <p>No—programs can run on school devices or shared stations.</p>
+        </details>
+        <details>
+          <summary>Is there homework?</summary>
+          <p>Optional practice—no graded homework unless requested by teachers.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Code Explorers</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('navToggle'), menu = document.getElementById('navMenu');
+    btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); menu.hidden = open; });
+    menu.hidden = true;
+  </script>
+</body>
+</html>
