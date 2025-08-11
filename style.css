@@ -131,23 +131,6 @@ header nav {
   padding: 10px 14px; border-radius: 10px;
 }
 
-/* Use Poppins for the brand text */
-.logo span {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem; /* tweak to taste */
-}
-
-/* Logo image sizing */
-.logo img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-/* Remove old decorative square if present */
-.logo::before { content: none; }
-
 
 
 /* 5) Buttons */
